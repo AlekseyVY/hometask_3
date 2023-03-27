@@ -24,6 +24,8 @@ export abstract class Weapon extends Item {
     return `You use the ${this.name}, dealing ${ Weapon.MODIFIER_CHANGE_RATE } points of damage.`;
   }
 
+  // please remove unnecessary methods
+
   polish(): void {
 
   }

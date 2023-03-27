@@ -18,9 +18,14 @@ export abstract class Item implements Comparable<Item> {
   protected static resetIdCounter(): void {
     this.idCounter = 1;
   }
-
+ // get rid of unnecessary spaces
 
   compareTo(other: Item): number {
+    /* it is too overloaded
+        the same result can be reached by two lines:
+    *  if (this.value === other.value && this.name.toLowerCase() === other.name.toLowerCase()) return 0;
+    *  return this.value > other.value ? 1 : -1;
+    * */
     if(this.value > other.value) {
       return 1;
     } else if(this.value < other.value) {
