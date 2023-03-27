@@ -2,7 +2,7 @@ import { Item } from "./Item";
 import { ItemComparator } from "./ItemComparator";
 
 export class Inventory {
-  items: Item[] = [];
+  items: Item[] = []; // usually should be private
 
   addItem(item: Item): void {
     this.items.push(item);
@@ -10,6 +10,7 @@ export class Inventory {
 
   sort(): void;
   sort(comparator?: ItemComparator): void {
+    // try to use ternary operator in such cases instead of if else
     if(comparator) {
       this.items.sort(comparator.compare);
     } else {
